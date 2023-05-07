@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogapalooza</title>
+    <link rel="stylesheet" href="/css/jass.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <header class="display-flex justify-space-between align-center p-2">
+        <h1>Blogapalooza</h1>
+        <div class="navbar">
+            <nav class="navbar-menu">
+                <a class="navbar-item">Home</a>
+                <a class="navbar-item">Dashboard</a>
+                {{#if logged_in}}
+                <nav>
+                    <button class="btn" id="logout">Logout</button>
+                </nav>
+                {{/if}}
+                {{#if !logged_in}}
+                <nav>
+                    <button class="btn" id="login">Login</button>
+                </nav>
+                {{/if}}
+            </nav>
+        </div>
+    </header>
+
+    <main class="container container-fluid mt-5">
+        {{{body}}}
+    </main>
+    <footer>
+
+    </footer>
+
+    {{#if logged_in}}
+    <script src="../../public/js/logout.js"></script>
+    {{/if}}
+</body>
+
+</html>
