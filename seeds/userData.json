@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Boba Fett",
+    "email": "bobasfeet@gmail.com",
+    "password": "pewpewudie232"
+  },
+  {
+    "name": "Luke Skywalker",
+    "email": "highastheskywalker@gmail.com",
+    "password": "tothemoon111"
+  },
+  {
+    "name": "Yoda",
+    "email": "yoda@gmail.com",
+    "password": "unlockyouwill"
+  },
+  {
+    "name": "Darth Maul",
+    "email": "mauledinhalf@gmail.com",
+    "password": "WhoNeedsLegs69"
+  },
+  {
+    "name": "Jar Jar Binks",
+    "email": "meesawritetoyou@gmail.com",
+    "password": "MeesaNoKnow"
+  }
+]
