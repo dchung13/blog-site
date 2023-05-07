@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { BlogPost } = require('../../models');
+const { BlogPost, Comment } = require('../../models');
 
 router.post('/', async (req, res) => {
     try {
@@ -32,7 +32,10 @@ router.get('/:id', async (req, res) => {
         const blogPostData = await BlogPost.findByPk({
             where: {
                 id: req.params.id
-            }
+            },
+            include: [
+                Comment
+            ]
         });
 
         if (!blogPostData) {
@@ -40,7 +43,7 @@ router.get('/:id', async (req, res) => {
             return;
         }
 
-        res.status(200).json(blogPostData);
+        res.render('blogpost', { blogPostData })
     } catch (err) {
         res.status(500).json(err);
     }

@@ -1,0 +1,16 @@
+<div class="row align-items-left">
+    <h1>{{blogpost.title}}</h1>
+    <h2>{{blogpost.user.name}}</h2>
+    <h3>{{blogpost.date}}</h3>
+    <p>{{blogpost.content}}</p>
+</div>
+
+<div class="row align-items-left">
+    {{#each blogPost.Comments as |blogPost.Comment|}}
+    <div>
+        <p class="col-md-7">{{content}}</p>
+        <p class="col-md-3">{{user.name}}</p>
+        <p class="col-md-2">{{date}}</p>
+    </div>
+    {{/each}}
+</div>
