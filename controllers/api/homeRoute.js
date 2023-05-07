@@ -5,8 +5,10 @@ router.get('/', async (req, res) => {
     try {
         const blogPostData = await BlogPost.findAll();
 
+        const blogPosts = blogPostData.map((fuckthisshit) => fuckthisshit.get({ plain: true}));
+
         res.render('homepage', {
-            blogPostData
+            blogPosts
         });
             
     } catch (err) {
