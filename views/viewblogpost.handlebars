@@ -11,9 +11,15 @@
         <p class="col-md-7">{{content}}</p>
         <p class="col-md-3">{{user.name}}</p>
         <p class="col-md-2">{{date}}</p>
+                {{#ifEquals ../blogpost.user_id ../session.user_id}}
+                <button id="delete-blogpost-button" data-id="{{_id}}">Delete</button>
+                {{/ifEquals}}
     </div>
     {{/each}}
 </div>
 <div>
     <a href="./comment.handlebars">+ Say Something</a>
 </div>
+{{#ifEquals ../blogpost.user_id ../session.user_id}}
+<script src="../public/js/deletepost.js"></script>
+{{/ifEquals}}
