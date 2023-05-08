@@ -3,7 +3,8 @@ const { User, BlogPost } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
-        const blogPostData = await BlogPost.findAll({
+        console.log('Pee pee poo poo')
+         const blogPostData = await BlogPost.findAll({
             include: [
                 {
                     model: User,
@@ -16,10 +17,10 @@ router.get('/', async (req, res) => {
         });
 
         const blogPosts = blogPostData.map((qwerty) => qwerty.get({ plain: true}));
-
+ 
         res.render('homepage', {
             layout: 'main',
-            blogPosts,
+            blogPosts, 
             logged_in: req.session.logged_in
         });
             
@@ -35,6 +36,10 @@ router.get('/login', (req, res) => {
     }
 
     res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+    res.render('signup');
 });
 
 module.exports = router;

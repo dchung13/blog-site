@@ -14,18 +14,18 @@
         <h1>Blogapalooza</h1>
         <div class="navbar">
             <nav class="navbar-menu">
-                <a href="../homepage.handlebars" class="navbar-item">Home</a>
-                <a href="../dashboard.handlebars" class="navbar-item">Dashboard</a>
+                <a href="/" class="navbar-item">Home</a>
+                <a href="/dashboard" class="navbar-item">Dashboard</a>
                 {{#if logged_in}}
                 <nav>
                     <button class="btn" id="logout">Logout</button>
                 </nav>
                 {{/if}}
-                {{#if !logged_in}}
+                {{#unless logged_in}}
                 <nav>
-                    <button class="btn" id="login">Login</button>
+                    <a href="/login"> <button class="btn" id="login">Login</button></a>
                 </nav>
-                {{/if}}
+                {{/unless}}
             </nav>
         </div>
     </header>
@@ -38,8 +38,10 @@
     </footer>
 
     {{#if logged_in}}
-    <script src="../../public/js/logout.js"></script>
+    <script src="/js/logout.js"></script>
     {{/if}}
+<script src="/js/login.js"></script>
 </body>
+
 
 </html>

@@ -1,9 +1,3 @@
-const signupButton = document.getElementById('navigate-to-signup');
-
-signupButton.addEventListener('click', () => {
-  window.location.href = '../../views/signup.handlebars';
-});
-
 const signupFormHandler = async (event) => {
 
   event.preventDefault();
