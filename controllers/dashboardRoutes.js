@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { User, BlogPost } = require('../../models');
-const withAuth = require('../../utils/auth');
+const { User, BlogPost } = require('../models');
+const withAuth = require('../utils/auth');
 
 
 //renders the dashboard with blogposts with the user_id
@@ -21,7 +21,8 @@ router.get('/', withAuth, async (req, res) => {
 
         res.render('dashboard', { 
             layout: 'main',
-            blogPosts
+            blogPosts,
+            logged_in: req.session.logged_in 
          })
     } catch (err) {
         res.status(500).json(err);

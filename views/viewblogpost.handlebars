@@ -1,16 +1,18 @@
-<div class="row align-items-left">
+<div class="columns">
+    <div class="column">
     <h1>{{blogpost.title}}</h1>
     <h2>{{blogpost.user.name}}</h2>
     <h3>{{blogpost.date}}</h3>
     <p>{{blogpost.content}}</p>
+    </div>
 </div>
 
-<div class="row align-items-left">
+<div class="columns">
     {{#each blogPost.Comments as |blogPost.Comment|}}
     <div>
-        <p class="col-md-7">{{content}}</p>
-        <p class="col-md-3">{{user.name}}</p>
-        <p class="col-md-2">{{date}}</p>
+        <p class="column is-three-fifths">{{content}}</p>
+        <p class="column is-one-fifth">{{user.name}}</p>
+        <p class="column is-one-fifth">{{date}}</p>
                 {{#ifEquals ../blogpost.user_id ../session.user_id}}
                 <button id="delete-blogpost-button" data-id="{{_id}}">Delete</button>
                 {{/ifEquals}}
@@ -18,7 +20,7 @@
     {{/each}}
 </div>
 <div>
-    <a href="./comment.handlebars">+ Say Something</a>
+    <a href="/createcomment">+ Say Something</a>
 </div>
 {{#ifEquals ../blogpost.user_id ../session.user_id}}
 <script src="../public/js/deletepost.js"></script>

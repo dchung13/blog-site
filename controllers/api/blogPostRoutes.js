@@ -44,7 +44,7 @@ router.get('/:id', withAuth, async (req, res) => {
             return;
         }
 
-        res.render('blogpost', { blogPostData })
+        res.render('blogPost', { blogPostData })
     } catch (err) {
         res.status(500).json(err);
     }
