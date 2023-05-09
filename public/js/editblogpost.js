@@ -6,6 +6,8 @@ const editblogpostFormHandler = async (event) => {
   const title = document.querySelector('#title').value.trim();
   const content = document.querySelector('#content').value.trim();
 
+  console.log(id);
+
   if (title && content) {
     const response = await fetch(`/api/blogPost/${id}`, {
       method: 'PUT',
@@ -22,5 +24,5 @@ const editblogpostFormHandler = async (event) => {
 };
 
 document
-  .querySelector('#create-blogpost-form')
+  .querySelector('#edit-blogpost-form')
   .addEventListener('submit', editblogpostFormHandler);

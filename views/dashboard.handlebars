@@ -1,10 +1,10 @@
 <h1 class="title has-text-centered">Your Bookshelf</h1>
 
-{{#each blogposts as |blogpost| }}
+{{#each blogPosts }}
 <div class="row align-center mb-5">
     <div class="col-md-12">
         <h2>{{title}}</h2>
-        <h6>{{date}}</h6>
+        <h6>{{date_created}}</h6>
     </div>
     <hr />
     <div class="row align-center mb-5">
@@ -13,8 +13,11 @@
         </div>
     </div>
 </div>
+<div>
+    <a href="/editblogpost">+ Edit Your Story</a>
+</div>
 {{/each}}
 
 <div>
-    <a href="/createblogpost.js">+ Create a New Blog Post</a>
+    <a href="/createblogpost">+ Create a New Story</a>
 </div>

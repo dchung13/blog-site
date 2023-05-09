@@ -1,27 +1,26 @@
 <div class="columns">
     <div class="column">
-    <h1>{{blogpost.title}}</h1>
-    <h2>{{blogpost.user.name}}</h2>
-    <h3>{{blogpost.date}}</h3>
-    <p>{{blogpost.content}}</p>
+    <h1>{{blogPosts.title}}</h1>
+    <h2>{{blogPosts.user.name}}</h2>
+    <h3>{{blogPosts.date_created}}</h3>
+    <p>{{blogPosts.content}}</p>
     </div>
 </div>
 
 <div class="columns">
-    {{#each blogPost.Comments as |blogPost.Comment|}}
+    {{#each Comment }}
     <div>
         <p class="column is-three-fifths">{{content}}</p>
         <p class="column is-one-fifth">{{user.name}}</p>
         <p class="column is-one-fifth">{{date}}</p>
-                {{#ifEquals ../blogpost.user_id ../session.user_id}}
-                <button id="delete-blogpost-button" data-id="{{_id}}">Delete</button>
-                {{/ifEquals}}
+
     </div>
     {{/each}}
 </div>
 <div>
-    <a href="/createcomment">+ Say Something</a>
+    <form id="create-comment">
+        <textarea id="content"></textarea>
+        <button type="submit" id="createcomment">+ Say Something</button>
+    </form>
 </div>
-{{#ifEquals ../blogpost.user_id ../session.user_id}}
-<script src="../public/js/deletepost.js"></script>
-{{/ifEquals}}
+<script src="/js/createcomment.js"></script>

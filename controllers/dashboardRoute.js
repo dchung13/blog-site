@@ -7,15 +7,11 @@ const withAuth = require('../utils/auth');
 router.get('/', withAuth, async (req, res) => {
     try {
         const blogPostData = await BlogPost.findAll({
-            where: [{
-                user_id: req.params.user_id
-            }]
+            where: {
+                user_id: req.session.user_id
+            }
         })
-
-        if (!blogPostData) {
-            res.status(404).json({ message: 'This is not the blog post you are looking for'});
-            return;
-        }
+        console.log(blogPostData);
 
         const blogPosts = blogPostData.map((qwerty) => qwerty.get({ plain: true}));
 
@@ -28,5 +24,7 @@ router.get('/', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+
 
 module.exports = router;

@@ -43,4 +43,24 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
+router.get("/createblogpost", withAuth, async (req, res) => {
+  try {
+    res.render('createblogpost', {
+        logged_in: req.session.user_id
+    })
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.get("/editblogpost", withAuth, async (req, res) => {
+  try { 
+    res.render('editblogpost', {
+        logged_in: req.session.user_id
+    })
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 module.exports = router;
