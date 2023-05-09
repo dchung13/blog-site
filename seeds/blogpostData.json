@@ -1,0 +1,27 @@
+[
+  {
+    "title": "I am a Jedi",
+    "content": "I have a lightsaber. It goes zrrrm.",
+    "user_id": "2"
+  },
+  {
+    "title": "You, hey",
+    "content": "My feet are your treasure",
+    "user_id": "1"
+  },
+  {
+    "title": "Hey, you",
+    "content": "My feet are smelly",
+    "user_id": "1"
+  },
+  {
+    "title": "Halfway Through Life",
+    "content": "How to cope with only half a body. Get mechanical implants dummy",
+    "user_id": "4"
+  },
+  {
+    "title": "Shhh",
+    "content": "Secretly, meesa am the dark side.",
+    "user_id": "5"
+  }
+]

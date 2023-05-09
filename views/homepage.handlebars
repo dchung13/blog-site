@@ -1,13 +1,16 @@
-
-
-        {{#each blogposts as |blogpost|}}
-        <div class="row align-center mb-5">
-            <div class="col-md-12">
-                <h2><a href="/blogPost/{{id}}">{{title}}</a></h2>
-                <h6>{{date}}</h6>
-            </div>
-            <div>
-                <h4>{{user.name}}</h4>
-            </div>
+{{#each blogPosts as |blogPost|}}
+<div class="has-text-centered">
+    <div class="has-text-centered">
+        {{#if logged_in}}
+        <h2 class="title"><a href="/blogPost/{{id}}">{{title}}</a></h2>
+        {{/if}}
+        {{#unless logged_in}}
+        <h2 class="title">{{title}}</h2>
+        {{/unless}}
+        <h6 class="subtitle">{{format_date date_created}}</h6>
+    </div>
+    <div>
+        <h4 class="has-text-right">{{user.name}}</h4>
+        </div>
         </div>
         {{/each}}

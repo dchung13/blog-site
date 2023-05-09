@@ -3,7 +3,7 @@ const { User, BlogPost } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
-        console.log('Pee pee poo poo')
+
          const blogPostData = await BlogPost.findAll({
             include: [
                 {
@@ -20,8 +20,7 @@ router.get('/', async (req, res) => {
  
         res.render('homepage', {
             layout: 'main',
-            blogPosts, 
-            logged_in: req.session.logged_in
+            blogPosts
         });
             
     } catch (err) {
